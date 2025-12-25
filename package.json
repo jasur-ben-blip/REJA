@@ -10,5 +10,12 @@
     "start": "node server.js"
   },
   "author": "ben",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
+  }
 }
