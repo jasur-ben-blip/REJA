@@ -1,4 +1,5 @@
 console.log("Web serverni boshlash");
+
 const express = require("express");
 const app = express();
 const http = require("http");
@@ -20,13 +21,13 @@ app.set("views", "views");
 app.set("view engine", "ejs");
 
 // 4 Routing ga bog'liq codelar 
+app.post("/create-item",  function(req, res) {
+    console.log(req.body);
+    res.json({test: "succes"});
+} );
 
-app.get("/hello", function(req, res) {
-    res.end(`<h1 style = "background: red">Hello World!</h1>`);
-});
-
-app.get("/gifts", function(req, res){
-    res.end(`<style>body{background-color: orange}</style><h1>Siz sovg'alar bolimidasiz</h1>`);
+app.get('/', function (req, res) {
+    res.render('harid');
 });
 
 const server = http.createServer(app);
