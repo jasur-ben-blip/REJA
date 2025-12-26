@@ -3,6 +3,16 @@ console.log("Web serverni boshlash");
 const express = require("express");
 const app = express();
 const http = require("http");
+const fs = require("fs");
+
+let user;
+fs.readFile("database/user.json", "utf-8", (err, data) => {
+    if(err) {
+        console.log("EROOR:", err);
+    } else {
+        user = JSON.parse(data)
+    }
+})
 
 // 1 ----> express ga bpg'liq bolgan kirib kelayotkan codelarimiz yoziladi // kirish codelari
 
@@ -21,12 +31,16 @@ app.set("views", "views");
 app.set("view engine", "ejs");
 
 // 4 Routing ga bog'liq codelar 
-app.post("/create-item",  function(req, res) {
+app.post("/create-item",  function(req, res) {  // post - malumontni ozi bilan olib kelib va databasega olgan malumotni yozadi.
     console.log(req.body);
     res.json({test: "succes"});
 } );
 
-app.get('/', function (req, res) {
+app.get('/author', (req, res) => {
+    res.render("author", {user: user});
+})
+
+app.get('/', function (req, res) {  //get - malumonni olish uchun ishlatiladi databasedan.
     res.render('harid');
 });
 

@@ -1,0 +1,20 @@
+{
+    "name": "JASURBEK(BEN)",
+    "profession": "Software Engineer",
+    "age": "22",
+    "residence": "Uzbekistan",
+    "adress": "S.Korea, Busan",
+    "languages": ["Uzbek, Korean, English"],
+    "skills": ["HTML, CSS, JS, NodeJS, Python"],
+    "extra-skills": ["Bootstrap, Materialize, Styling, Sass, Django, Flask, GIT Knowledge "],
+    "work_place": "IT company",
+    "service_desc": "",
+    "about_me": "",
+    "city": "",
+    "title": "",
+    "flower_desc": "",
+    "flower_name": "",
+    "flower_price": "",
+    "famous_words": "",
+    "famous_name": ""
+}
