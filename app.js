@@ -31,9 +31,18 @@ app.set("view engine", "ejs");
 
 // 4 Routing ga bog'liq codelar
 app.post("/create-item", function (req, res) {
+  console.log("user entered /create-item");
   // post - malumontni ozi bilan olib kelib va databasega olgan malumotni yozadi.
   console.log(req.body);
-  res.json({ test: "succes" });
+  const new_reja = req.body.reja;
+  db.collection("plans").insertOne({ reja: new_reja }, (err, data) => {
+    if (err) {
+      console.log(err);
+      res.end("something went wrong");
+    } else {
+      res.end("succesfully added");
+    }
+  });
 });
 
 app.get("/author", (req, res) => {
@@ -41,8 +50,18 @@ app.get("/author", (req, res) => {
 });
 
 app.get("/", function (req, res) {
-  //get - malumonni olish uchun ishlatiladi databasedan.
-  res.render("reja");
+  console.log("user entered /");
+  db.collection("plans")
+    .find()
+    .toArray((err, data) => {
+      if (err) {
+        console.log(err);
+        res.end("something went wrong");
+      } else {
+        console.log(data);
+        res.render("reja", { items: data });
+      }
+    });
 });
 
 module.exports = app;

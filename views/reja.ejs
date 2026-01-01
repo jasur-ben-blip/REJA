@@ -22,14 +22,12 @@
 
         <div class="card shadow-lg border-0 rounded-3">
           <div class="card-body p-3">
-             <!-- <form id="create-form" action="/create-item" method="post"> -->
-              <form id="create-item"></form>
+             <form id="create-form" action="/create-item" method="post">
                  <div class="d-flex gap-2 align-items-stretch">
-                       <input
-                            id="create-item"
+                       <input 
                             autofocus
                             type="text"
-                            name="Yangi Harid"
+                            name="reja"
                             class="form-control  shadow-sm"
                             placeholder="Yangi Haridlaringizni kiriting..."
                             autocomplete="off"
@@ -41,8 +39,20 @@
                  </div> 
              </form>
          </div>
-         
      </div>
+    
+   <ul id="item-list" class="list-group pb-5" style="margin-top: 20px;">
+    <% items.map(function(item){ %>
+      <li class="list-group-item list-group-item-info d-flex align-items-center justify-content-between">
+          <span class="item-text"><%=item.reja%></span>
+        <div>
+          <button data.id="<%=item._id%>" class="edit-me btn btn-secondary btn-sm mr-1">O'zgartirish</button>
+          <button data.id="<%=item._id%>" class="delete-me btn btn-danger btn-sm">O'chirish</button>
+        </div>
+      </li>
+    <% }) %>    
+  </ul>
+
     <button id="delete ALL" class="btn btn-danger   shadow-sm" style="border-radius:20px; width: 200px;  margin-top: 20px; background-color: red;">
      Hamma rejalarni ochirish
     </button> 
