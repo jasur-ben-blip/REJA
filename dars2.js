@@ -24,6 +24,8 @@ function maslahatBering(a, callback) {
   }
 }
 
+// --------------->> callback call qismida 2chi argument ornida function bolib kleadi <<-------------------------
+
 console.log("passed here 0");
 maslahatBering(70, (err, data) => {
   if (err) console.log("ERROR:", err);
