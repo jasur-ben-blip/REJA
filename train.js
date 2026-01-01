@@ -1,19 +1,33 @@
-// --------------------- A - Task ------------------------
-
-const letter = "k";
-const word = "tez-tez ketish kerak";
-
-function countLetters(letter, word) {
-  let number = 0;
-  for (let i = 0; i < word.length; i++) {
-    if (word[i] === letter) {
-      number++;
+// ---------------------- B - Task ------------------------------
+function countNumbers(string) {
+  let numbers = 0;
+  for (let i = 0; i < string.length; i++) {
+    if (string[i] >= "0" && string[i] <= "9") {
+      numbers++;
     }
   }
-  return number;
+  return numbers;
 }
-const result = countLetters(letter, word);
-console.log("RESULT:", result);
+const string = "asda6s5fa76d5ga89sf5ad54gas7d";
+const result = countNumbers(string);
+console.log("result:", result);
+
+// --------------------- A - Task ------------------------
+
+// const letter = "k";
+// const word = "tez-tez ketish kerak";
+
+// function countLetters(letter, word) {
+//   let number = 0;
+//   for (let i = 0; i < word.length; i++) {
+//     if (word[i] === letter) {
+//       number++;
+//     }
+//   }
+//   return number;
+// }
+// const result = countLetters(letter, word);
+// console.log("RESULT:", result);
 
 // ----------------------------  -----------------------------------
 
