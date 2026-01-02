@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="witdth=device-witdth, initial-scale=1.0">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Document</title>
     <link 
       rel="stylesheet"
@@ -25,6 +25,7 @@
              <form id="create-form" action="/create-item" method="post">
                  <div class="d-flex gap-2 align-items-stretch">
                        <input 
+                            id="create-field"
                             autofocus
                             type="text"
                             name="reja"
@@ -56,6 +57,8 @@
     <button id="delete ALL" class="btn btn-danger   shadow-sm" style="border-radius:20px; width: 200px;  margin-top: 20px; background-color: red;">
      Hamma rejalarni ochirish
     </button> 
+    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
+    <script src="browser.js"></script>
  </body>
 
  </html>
