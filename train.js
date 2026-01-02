@@ -1,16 +1,70 @@
-// ---------------------- B - Task ------------------------------
-function countNumbers(string) {
-  let numbers = 0;
-  for (let i = 0; i < string.length; i++) {
-    if (string[i] >= "0" && string[i] <= "9") {
-      numbers++;
-    }
+// ------------------------- C - Task ---------------------------------------
+
+class Shop {
+  constructor(apple, kiwi, orange) {
+    this.apple = apple;
+    this.kiwi = kiwi;
+    this.orange = orange;
   }
-  return numbers;
+
+  // hozirgi vaqtni olish uchun yordamchi method
+  _time() {
+    const now = new Date();
+    return now.toTimeString().slice(0, 5);
+  }
+
+  qoldiq() {
+    return `Hozir ${this._time()}da ${this.apple}ta olma, ${
+      this.kiwi
+    }ta kiwi va ${this.orange}ta apelsin mavjud!`;
+  }
+
+  sell(product, number) {
+    if (this[product] === undefined) {
+      console.log(`Bunday mahsulot yo‘q!`);
+      return;
+    }
+
+    if (this[product] < number) {
+      console.log(`Yetarli ${product} yo‘q!`);
+      return;
+    }
+
+    this[product] -= number;
+    console.log(`Hozir ${this._time()}da ${number}ta ${product} sotild!`);
+  }
+
+  kelishi(product, number) {
+    if (this[product] === undefined) {
+      console.log(`Bunday mahsulot yo‘q `);
+      return;
+    }
+
+    this[product] += number;
+    console.log(`Hozir ${this._time()}da ${number}ta ${product} qabul qilindi`);
+  }
 }
-const string = "asda6s5fa76d5ga89sf5ad54gas7d";
-const result = countNumbers(string);
-console.log("result:", result);
+
+const shop = new Shop(20, 30, 25);
+console.log(shop.qoldiq());
+shop.sell("kiwi", 5);
+shop.kelishi("apple", 5);
+
+console.log(shop.qoldiq());
+
+// ---------------------- B - Task ------------------------------
+// function countNumbers(string) {
+//   let numbers = 0;
+//   for (let i = 0; i < string.length; i++) {
+//     if (string[i] >= "0" && string[i] <= "9") {
+//       numbers++;
+//     }
+//   }
+//   return numbers;
+// }
+// const string = "asda6s5fa76d5ga89sf5ad54gas7d";
+// const result = countNumbers(string);
+// console.log("result:", result);
 
 // --------------------- A - Task ------------------------
 
