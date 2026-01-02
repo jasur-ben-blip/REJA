@@ -1,3 +1,5 @@
+// const { response } = require("../app");
+
 console.log("Frontend JS ishga tushdi");
 
 function itemTemplate(item) {
@@ -26,4 +28,26 @@ document.getElementById("create-form").addEventListener("submit", function (e) {
     .catch((err) => {
       console.log("Iltimos qaytattan harakat qiling");
     });
+});
+
+document.addEventListener("click", function (e) {
+  // delete oper
+  console.log(e.target);
+  if (e.target.classList.contains("delete-me")) {
+    if (confirm("Aniq ochirmoqchimisz?")) {
+      axios
+        .post("/delete-item", { id: e.target.getAttribute("data-id") })
+        .then((response) => {
+          console.log(response.data);
+          e.target.parentElement.parentElement.remove();
+        })
+        .catch((err) => {
+          console.log("Iltimos qaytattan harakat qiling");
+        });
+    }
+  }
+  // edit oper
+  if (e.target.classList.contains("edit-me")) {
+    alert("siz edit buttonni bosdingiz");
+  }
 });
