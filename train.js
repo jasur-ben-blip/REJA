@@ -1,5 +1,15 @@
 // ------------------------- C - Task ---------------------------------------
+/*  Savol: Shunday class tuzing tuzing nomi Shop,
+  va uni constructoriga 3 hil mahsulot pass bolsin, hamda classning
+  3ta methodi bolsin, biri qoldiq, biri sotish va biri qabul.
+  Har bir method ishga tushgan vaqt ham log qilinsin.
+  MASALAN: const shop = new Shop(4, 5, 2); shop-qoldiq( )
+  return hozir 20:40da 4ta non, 5ta lagmon va 2ta cola mavjud!
+  shop.sotish( 'non', 3) & shop.qabul( 'cola', 4) & shop.qoldiq()
+  return hozir 20:50da 1ta non, 5ta lagmon va 6ta cola mavjud!
+*/
 
+// ------ Masalaning yechimi ---------
 class Shop {
   constructor(apple, kiwi, orange) {
     this.apple = apple;
@@ -7,19 +17,20 @@ class Shop {
     this.orange = orange;
   }
 
-  // hozirgi vaqtni olish uchun yordamchi method
   _time() {
     const now = new Date();
     return now.toTimeString().slice(0, 5);
   }
 
   qoldiq() {
+    //metod qoldiq
     return `Hozir ${this._time()}da ${this.apple}ta olma, ${
       this.kiwi
     }ta kiwi va ${this.orange}ta apelsin mavjud!`;
   }
 
   sell(product, number) {
+    //metod sotish
     if (this[product] === undefined) {
       console.log(`Bunday mahsulot yo‘q!`);
       return;
@@ -35,6 +46,7 @@ class Shop {
   }
 
   kelishi(product, number) {
+    //metod qabul qilish
     if (this[product] === undefined) {
       console.log(`Bunday mahsulot yo‘q `);
       return;
