@@ -1,3 +1,31 @@
+// ------------------ MIT task - D -----------------------------------
+
+/* D task SHARTI : 
+  Shunday function tuzing, u 2 ta string parametrga ega bolsin, 
+  hamda ikkala string bir xil harflardan iborat bolsa true, aks 
+  xolda false qaytarsin 
+
+  MASALAN 
+  checkContent("mitgroup", "gmtiprou") 
+  return qiladi true.
+
+*/
+
+// YECHIM:
+
+const a = "jasurbek";
+const b = "kebrusaj";
+
+function checkContent(a, b) {
+  if (a.length !== b.length) {
+    return false;
+  }
+  let sortedA = a.split("").sort().join("");
+  let sortedB = b.split("").sort().join("");
+  return sortedA === sortedB;
+}
+console.log(checkContent(a, b));
+
 // ------------------------- C - Task ---------------------------------------
 /*  Savol: Shunday class tuzing tuzing nomi Shop,
   va uni constructoriga 3 hil mahsulot pass bolsin, hamda classning
@@ -10,59 +38,59 @@
 */
 
 // ------ Masalaning yechimi ---------
-class Shop {
-  constructor(apple, kiwi, orange) {
-    this.apple = apple;
-    this.kiwi = kiwi;
-    this.orange = orange;
-  }
+// class Shop {
+//   constructor(apple, kiwi, orange) {
+//     this.apple = apple;
+//     this.kiwi = kiwi;
+//     this.orange = orange;
+//   }
 
-  _time() {
-    const now = new Date();
-    return now.toTimeString().slice(0, 5);
-  }
+//   _time() {
+//     const now = new Date();
+//     return now.toTimeString().slice(0, 5);
+//   }
 
-  qoldiq() {
-    //metod qoldiq
-    return `Hozir ${this._time()}da ${this.apple}ta olma, ${
-      this.kiwi
-    }ta kiwi va ${this.orange}ta apelsin mavjud!`;
-  }
+//   qoldiq() {
+//     //metod qoldiq
+//     return `Hozir ${this._time()}da ${this.apple}ta olma, ${
+//       this.kiwi
+//     }ta kiwi va ${this.orange}ta apelsin mavjud!`;
+//   }
 
-  sell(product, number) {
-    //metod sotish
-    if (this[product] === undefined) {
-      console.log(`Bunday mahsulot yo‘q!`);
-      return;
-    }
+//   sell(product, number) {
+//     //metod sotish
+//     if (this[product] === undefined) {
+//       console.log(`Bunday mahsulot yo‘q!`);
+//       return;
+//     }
 
-    if (this[product] < number) {
-      console.log(`Yetarli ${product} yo‘q!`);
-      return;
-    }
+//     if (this[product] < number) {
+//       console.log(`Yetarli ${product} yo‘q!`);
+//       return;
+//     }
 
-    this[product] -= number;
-    console.log(`Hozir ${this._time()}da ${number}ta ${product} sotild!`);
-  }
+//     this[product] -= number;
+//     console.log(`Hozir ${this._time()}da ${number}ta ${product} sotild!`);
+//   }
 
-  kelishi(product, number) {
-    //metod qabul qilish
-    if (this[product] === undefined) {
-      console.log(`Bunday mahsulot yo‘q `);
-      return;
-    }
+//   kelishi(product, number) {
+//     //metod qabul qilish
+//     if (this[product] === undefined) {
+//       console.log(`Bunday mahsulot yo‘q `);
+//       return;
+//     }
 
-    this[product] += number;
-    console.log(`Hozir ${this._time()}da ${number}ta ${product} qabul qilindi`);
-  }
-}
+//     this[product] += number;
+//     console.log(`Hozir ${this._time()}da ${number}ta ${product} qabul qilindi`);
+//   }
+// }
 
-const shop = new Shop(20, 30, 25);
-console.log(shop.qoldiq());
-shop.sell("kiwi", 5);
-shop.kelishi("apple", 5);
+// const shop = new Shop(20, 30, 25);
+// console.log(shop.qoldiq());
+// shop.sell("kiwi", 5);
+// shop.kelishi("apple", 5);
 
-console.log(shop.qoldiq());
+// console.log(shop.qoldiq());
 
 // ---------------------- B - Task ------------------------------
 // function countNumbers(string) {
