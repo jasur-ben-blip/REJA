@@ -2,20 +2,20 @@ console.log("Web serverni boshlash");
 
 const express = require("express");
 const app = express();
-const fs = require("fs");
+// const fs = require("fs");
 
 // MongoDB call
 const db = require("./server").db();
 const mongodb = require("mongodb");
 
-let user;
-fs.readFile("database/user.json", "utf-8", (err, data) => {
-  if (err) {
-    console.log("EROOR:", err);
-  } else {
-    user = JSON.parse(data);
-  }
-});
+// let user;
+// fs.readFile("database/user.json", "utf-8", (err, data) => {
+//   if (err) {
+//     console.log("EROOR:", err);
+//   } else {
+//     user = JSON.parse(data);
+//   }
+// });
 
 // 1 ----> express ga bpg'liq bolgan kirib kelayotkan codelarimiz yoziladi // kirish codelari
 
@@ -58,8 +58,30 @@ app.post("/delete-item", (req, res) => {
   );
 });
 
-app.get("/author", (req, res) => {
-  res.render("author", { user: user });
+app.post("/edit-item", (req, res) => {
+  const data = req.body;
+  console.log(data);
+  db.collection("plans").findOneAndUpdate(
+    {
+      _id: new mongodb.ObjectId(data.id),
+    },
+    { $set: { reja: data.new_input } },
+    function (err, data) {
+      res.json({ state: "success" });
+    }
+  );
+});
+
+// app.get("/author", (req, res) => {
+//   res.render("author", { user: user });
+// });
+
+app.post("/delete-all", (req, res) => {
+  if (req.body.delete_all) {
+    db.collection("plans").deleteMany(function () {
+      res.json({ state: "hamma rejalar ochirildi" });
+    });
+  }
 });
 
 app.get("/", function (req, res) {
