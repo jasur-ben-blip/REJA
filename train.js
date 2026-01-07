@@ -1,3 +1,20 @@
+//------------------------ MIT task - E --------------------------
+/* >>>> SAVOL <<<<<<<
+Shunday bir function tuzing, u bitta string argumentini 
+qabul qilib osha stringni teskari qilib return qilsin.
+  MASALAN: getRevorse("hello") return qilsin("olleh")
+*/
+
+// >>>>>>>> YECHIM <<<<<<<<<,
+
+const a = "hello";
+
+function getRevorse(a) {
+  return a.split("").reverse().join("");
+}
+
+console.log(getRevorse(a));
+
 // ------------------ MIT task - D -----------------------------------
 
 /* D task SHARTI : 
@@ -13,18 +30,18 @@
 
 // YECHIM:
 
-const a = "jasurbek";
-const b = "kebrusaj";
+// const a = "jasurbek";
+// const b = "kebrusaj";
 
-function checkContent(a, b) {
-  if (a.length !== b.length) {
-    return false;
-  }
-  let sortedA = a.split("").sort().join("");
-  let sortedB = b.split("").sort().join("");
-  return sortedA === sortedB;
-}
-console.log(checkContent(a, b));
+// function checkContent(a, b) {
+//   if (a.length !== b.length) {
+//     return false;
+//   }
+//   let sortedA = a.split("").sort().join("");
+//   let sortedB = b.split("").sort().join("");
+//   return sortedA === sortedB;
+// }
+// console.log(checkContent(a, b));
 
 // ------------------------- C - Task ---------------------------------------
 /*  Savol: Shunday class tuzing tuzing nomi Shop,
