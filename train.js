@@ -1,3 +1,30 @@
+// -------------- MIT task - F -------------------
+/*  >>>>>>>>> SHARTI <<<<<<<<<<<<<<<
+    Yagona string argumentga ega findDoublers nomli function tuzing 
+    Agar stringda bittadan ortiq bir xil harflar ishtirok 
+    etgan bolsa true yokida false natija qaytarsin.
+
+    MASALAN: findDoublers("hello"); natija: true qaytadi. Sababi ikki
+    marotaba takrorlangan 'll' harfi mavjud.  
+ */
+// >>>>>>>>>>>>>>>> YECHIM <<<<<<<<<<<<<<<<<<<<<<
+const a = "hello";
+
+function findDoublers(a) {
+  const eslabQol = []; // array yaratib olamiz oldingi harflarni eslab qolish uchun.
+  for (let i = 0; i < a.length; i++) {
+    // foor loop - so'zni harfma harf korib chiqamiz
+    const letter = a[i]; // har bir indexdagi harflarni korib chiqish uchun variable yaratib oldik.
+    if (eslabQol.includes(letter)) {
+      // shart beryabmiz agar hozirgi harf -eslabQol- ichida bolsa u harfni korsatadi va bizga true qaytaradi!
+      console.log("Takrorlangan harf:", letter);
+      return true;
+    }
+    eslabQol.push(letter); // hozirgi harfni eslab qolish vazifasini bajaradi | bu qatorsiz doimo false qaytaradi.
+  } // eslabQol - xotira(database) - deb olsak | biz unga yangi harfni qoshib qoyabmiz keyinchalik qaytarilishini tekshirish maqsadida!
+  return false;
+}
+console.log(findDoublers(a));
 //------------------------ MIT task - E --------------------------
 /* >>>> SAVOL <<<<<<<
 Shunday bir function tuzing, u bitta string argumentini 
@@ -7,13 +34,13 @@ qabul qilib osha stringni teskari qilib return qilsin.
 
 // >>>>>>>> YECHIM <<<<<<<<<,
 
-const a = "hello";
+// const a = "hello";
 
-function getRevorse(a) {
-  return a.split("").reverse().join("");
-}
+// function getRevorse(a) {
+//   return a.split("").reverse().join("");
+// }
 
-console.log(getRevorse(a));
+// console.log(getRevorse(a));
 
 // ------------------ MIT task - D -----------------------------------
 
